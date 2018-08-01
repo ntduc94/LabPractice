@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var student = ViewBag.student;
+}
+
+<h2>Delete</h2>
+
+@if (student != null)
+{
+    using (Html.BeginForm())
+    {
+        <div class="form-horizontal">
+            <div class="form-group">
+                <span>Are you sure want to delete this student: "@student.FirstName @student.LastName"</span>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-primary" type="submit" value="Delete" />
+            </div>
+        </div>
+    }
+}
+@*@else
+{
+    <div class="alert alert-warning" role="alert">
+        No student found.
+    </div>
+}*@

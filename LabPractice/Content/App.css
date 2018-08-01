@@ -1,0 +1,30 @@
+﻿/* Menu View Style */
+.nav {
+    background: #444;
+}
+.nav .nav-link {
+    color: #fff;
+}
+.nav .nav-link:hover, .nav nav-link:active {
+    color: #00FF88;
+}
+
+/* Student Create View Style */
+#student-create-view {
+    width: 50%;
+    padding: 10px;
+}
+#student-create-view > form {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Student List View Style */
+#student-management-view {
+    padding: 10px;
+}
+#student-management-view .table thead {
+    background: #00AEFF;
+    color: #fff;
+}

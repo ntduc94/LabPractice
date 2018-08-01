@@ -1,0 +1,51 @@
+﻿@model List<LabPractice.Models.View.StudentListItemView>
+
+@{
+    ViewBag.Title = "Create New Student";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var studentList = Model;
+}
+<div id="student-management-view">
+    <h2>Student Management</h2>
+    @if (studentList.Count > 0)
+    {
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Email</th>
+                    <th>Note</th>
+                    <th>Birthday</th>
+                    <th>Age</th>
+                    <th>Last Updated</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var student in studentList)
+                {
+                    <tr>
+                        <td>@student.FirstName</td>
+                        <td>@student.LastName</td>
+                        <td>@student.Email</td>
+                        <td>@student.Note</td>
+                        <td>@student.Birthday</td>
+                        <td>@student.GetAge()</td>
+                        <td>@student.UpdatedAt</td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", "Student", new { id = student.Uuid}, null)
+                            @Html.ActionLink("Delete", "Delete", "Student", new { id = student.Uuid}, null)
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+        <div class="alert alert-warning" role="alert">
+                No student found.
+        </div>
+    } 
+</div>
